@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://benhrpr.github.io/sitemap.xml
+Sitemap: benhrpr.github.io/sitemap.xml
