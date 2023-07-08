@@ -8,7 +8,7 @@ middle_name:
 last_name: Harper
 email: 
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
+  
 footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords:  # add your own keywords or leave empty
@@ -104,7 +104,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
-  Use GitHub to reach me. This website was created using 'Al-Folio'
+  Use GitHub to reach me. This website was created using 'Al-Folio'.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
