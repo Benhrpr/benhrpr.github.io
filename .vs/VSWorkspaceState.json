@@ -1,6 +1,16 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\.github",
+    "\\.github\\workflows",
+    "\\assets",
+    "\\assets\\pdf",
+    "\\assets\\video",
+    "\\blog (not used)",
+    "\\_bibliography",
+    "\\_news",
+    "\\_pages"
   ],
+  "SelectedNode": "\\_pages\\repositories.md",
   "PreviewInSolutionExplorer": false
 }
