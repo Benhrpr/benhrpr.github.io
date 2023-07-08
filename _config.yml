@@ -104,8 +104,7 @@ youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
 discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
-  Use GitHub to reach me
-  This website was created using 'Al-Folio'
+  Use GitHub to reach me. This website was created using 'Al-Folio'
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
