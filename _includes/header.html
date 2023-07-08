@@ -51,7 +51,7 @@
                 </a>
               </li>
               {% if site.blog_nav_title %}
-
+              {%- endif -%}
               <!-- Other pages -->
               {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
               {%- for p in sorted_pages -%}
