@@ -1,11 +1,12 @@
 {%- if site.enable_google_analytics -%}
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NV2XCQMMK0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){ window.dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
+
+    gtag('config', 'G-NV2XCQMMK0');
   </script>
 {%- endif -%}
 {%- if site.enable_panelbear_analytics -%}
