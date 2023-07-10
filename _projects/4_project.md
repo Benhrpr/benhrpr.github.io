@@ -24,6 +24,3 @@ SSD: 960 evo 500gb/500gb kingston
 GPU: Asrock A750
 
 Case: Fractal Pop Mini Air
-</div>
-```
-{% endraw %}
