@@ -1,7 +1,7 @@
 ---
 layout: page
-title: project 4
-description: another without an image
+title: Built a PC
+description: My personal PC build
 img:
 importance: 3
 category: fun
