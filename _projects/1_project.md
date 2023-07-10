@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Built a PC
-description: a project with a background image
+description: My personal PC build
 img: assets/img/12.jpg
 importance: 1
 category: work
