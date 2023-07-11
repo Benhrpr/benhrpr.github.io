@@ -1,8 +1,8 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title: Created this website
+description: A personal website for myself
+img: assets/img/jekyll.jpg
 importance: 3
 category: fun
 ---
