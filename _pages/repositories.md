@@ -7,7 +7,7 @@ nav: true
 nav_order: 3
 ---
 
-[Github]("https://github.com/Benhrpr")
+[My GitHub](https://github.com/Benhrpr)
 
 ## GitHub Stats
 
