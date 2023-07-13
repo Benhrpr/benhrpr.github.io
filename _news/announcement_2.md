@@ -1,8 +1,8 @@
 ---
 layout: post
-date: Term 2 Holidays
+date: 2023/04/14 12:00
 inline: true
 related_posts: false
 ---
 
-Built a pc
+Built my new PC
