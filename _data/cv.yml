@@ -4,8 +4,8 @@
     - name: Full Name
       value: Ben Harper
     - name: Date of Birth
-      value: 14th March 1879
-    - name: Main languages
+      value: 25th February 2009
+    - name: Main Languages
       value: English
 
 - title: Education
@@ -64,9 +64,9 @@
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: <a href="https://github.com/benhrpr/benhrpr.github.io">Benhrpr.github.io</a>
+      year: 2023-now
+      description: A portofolio website used to display interestes, news and projects. Hosted on GitHub and based off of al-folio.
 
 - title: Honors and Awards
   type: time_table
