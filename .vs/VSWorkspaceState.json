@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\blog (not used)",
     "\\_bibliography",
     "\\_includes",
+    "\\_includes\\scripts",
     "\\_layouts",
     "\\_news",
     "\\_pages",
@@ -11,5 +11,6 @@
     "\\_posts",
     "\\_projects"
   ],
+  "SelectedNode": "\\_news\\announcement_1.md",
   "PreviewInSolutionExplorer": false
 }
