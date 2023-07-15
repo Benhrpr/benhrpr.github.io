@@ -1,14 +1,14 @@
 ---
 layout: post
-title: A simple tutorial in writing a README.md .md file
+title: Tutorial for making a cool GitHub profile
 date: 2023-07-15 15:53:00-0400
-description: A simple tutorial for using markdown 
-categories: sample-posts blockquotes
+description: Creating a cool GitHub profile using the README.md file
+categories: blockquotes
 giscus_comments: true
 related_posts: true
 ---
 
-## Tutorial for using markdown
+## Tutorial for making a cool GitHub profile
 
 #### Titles/Subtitles
 To create a title/subtitle you will need to add hashtags at the start of the line on which you want your title/subitle to be. The amount of hashtags you will have to put depends on how big you want your title/subtitle to be, the lesser amount of hashtags, the bigger the title/subtitle.
