@@ -8,4 +8,4 @@ nav_order: 4
 
 #### My games
 
-(Snake)[https://benhrpr.github.io/snake/]
+[Snake](https://benhrpr.github.io/snake/)
