@@ -1,16 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\_bibliography",
-    "\\_includes",
-    "\\_includes\\scripts",
-    "\\_layouts",
+    "\\game",
+    "\\game\\snake",
     "\\_news",
     "\\_pages",
-    "\\_plugins",
     "\\_posts",
     "\\_projects"
   ],
-  "SelectedNode": "\\_posts\\2023-07-15-md-tutorial.md",
+  "SelectedNode": "\\game\\snake\\snake.js",
   "PreviewInSolutionExplorer": false
 }

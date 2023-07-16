@@ -1,9 +1,11 @@
 ---
-layout: about
+layout: page
 permalink: /games/
 title: games
 nav: true
 nav_order: 4
 ---
 
-Test
+#### My games
+
+(Snake)[benhrpr.github.io/snake]
