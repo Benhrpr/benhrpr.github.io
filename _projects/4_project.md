@@ -2,7 +2,7 @@
 layout: page
 title: Built a PC
 description: My personal PC build
-img:
+img: assets/img/pc.jpg
 importance: 3
 category: fun
 ---
