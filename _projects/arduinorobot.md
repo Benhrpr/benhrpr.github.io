@@ -2,7 +2,7 @@
 layout: page
 title: Arduino Lego Robot
 description: A robot built using an Arduino and Lego
-img: assets/img/arduino.jpg
+img: assets/img/arduinorobot.jpg
 importance: 4
 category: fun
 ---
