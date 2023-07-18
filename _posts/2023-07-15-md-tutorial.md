@@ -3,7 +3,7 @@ layout: post
 title: Tutorial for making a cool GitHub profile
 date: 2023-07-15 15:53:00-0400
 description: Creating a cool GitHub profile using the README.md file
-categories: blockquotes
+categories: tutorials
 giscus_comments: true
 related_posts: true
 ---
