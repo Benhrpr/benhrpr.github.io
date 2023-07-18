@@ -1,14 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\assets",
+    "\\assets\\img",
     "\\game",
     "\\game\\snake",
-    "\\_includes",
+    "\\_data",
     "\\_news",
     "\\_pages",
     "\\_posts",
-    "\\_projects"
+    "\\_projects",
+    "\\_sass"
   ],
-  "SelectedNode": "\\_pages\\games.md",
+  "SelectedNode": "\\_projects\\arduinorobot.md",
   "PreviewInSolutionExplorer": false
 }
