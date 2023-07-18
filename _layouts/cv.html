@@ -9,7 +9,7 @@ layout: default
             <p class="post-description">{{ page.description }}</p>
           </header>
                 
-          <h4>{% t cv.table_of_contents %}</h4>
+          <h4>{% cv.table_of_contents %}</h4>
           <ul class="timeline">
           {% for entry in site.data[site.lang].cv %}
             <li><a href="#{{ entry.title }}"><span class="badge-toc">{{ entry.title }}</span></a></li>

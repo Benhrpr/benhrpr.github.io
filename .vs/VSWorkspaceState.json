@@ -3,11 +3,12 @@
     "",
     "\\game",
     "\\game\\snake",
+    "\\_includes",
     "\\_news",
     "\\_pages",
     "\\_posts",
     "\\_projects"
   ],
-  "SelectedNode": "\\game\\snake\\snake.js",
+  "SelectedNode": "\\_pages\\games.md",
   "PreviewInSolutionExplorer": false
 }
