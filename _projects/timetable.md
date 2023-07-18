@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Simple timetable website
-description: A simple timetable website for students to view their classes and information about themselves.
+title: Prototype timetable website
+description: A prototype timetable website for students to view their classes and information about themselves.
 img: assets/img/timetable.png
 importance: 1
 category: school
