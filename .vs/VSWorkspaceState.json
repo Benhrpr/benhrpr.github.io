@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\assets",
     "\\game",
     "\\game\\snake",
     "\\_data",
@@ -12,6 +11,5 @@
     "\\_projects",
     "\\_sass"
   ],
-  "SelectedNode": "\\_projects\\3_project.md",
   "PreviewInSolutionExplorer": false
 }
