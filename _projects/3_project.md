@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Replit task
-description: TBA
+title: Games
+description: 
 img: assets/img/7.jpg
-redirect: 
-importance: 3
-category: school
+redirect: benhrpt.github.io/games/
+importance: 4
+category: fun
 ---
 
