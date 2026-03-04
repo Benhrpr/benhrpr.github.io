@@ -13,16 +13,15 @@
   contents:
     - title: Primary School
       institution: Attended a primary school in Melbourne
-      year: 2014
+      year: 2014-2020
       description:
         - From 2014-2020
         - Finished all years (preparatory to year 6)
     - title: High school
       institution: Attending a high school in Melbourne
-      year: 2021
+      year: 2021-2026
       description:
-        - From 2021-2026
-          VCE subjects were
+        VCE subjects were
         - English
         - Physics
         - Mathematical Methods
@@ -35,7 +34,7 @@
   type: time_table
   contents:
     - title: Gardening
-      year: 2021
+      year: 2021-2022
       description: Provided gardening services for a neighbour.
 
 
@@ -43,11 +42,10 @@
   type: time_table
   contents:
     - title: VHAP
-      year: 2021
+      year: 2021-2022
       description: 
-       - 2021-2022
-        - Was apart of multiple instances of the Victorian High Achiever Program (VHAP) in maths and english. 
-          Every week there was lectures with other high achievers.
+        Was apart of multiple instances of the Victorian High Achiever Program (VHAP) in maths and english. 
+        Every week there was lectures with other high achievers.
   
 - title: Open Source Projects
   type: time_table
