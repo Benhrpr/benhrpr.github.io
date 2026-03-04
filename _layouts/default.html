@@ -11,7 +11,9 @@
 
   <!-- Body -->
   <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
-
+    
+    <div class="main"></div>
+    {{ content }}
     <!-- Header -->
     {%- include header.html %}
 
