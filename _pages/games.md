@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /games/
-title: games
+title: Games
 nav: true
 nav_order: 4
 ---
