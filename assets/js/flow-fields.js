@@ -1,0 +1,83 @@
+// flow-field.js
+const canvas = document.createElement('canvas');
+document.body.appendChild(canvas);
+const ctx = canvas.getContext('2d');
+
+// Make canvas cover the whole page
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Handle resizing
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+
+// Particle setup
+const numParticles = 1000;
+const particles = [];
+for (let i = 0; i < numParticles; i++) {
+  particles.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    vx: 0,
+    vy: 0,
+  });
+}
+
+// Optional mouse interaction
+const mouse = { x: null, y: null };
+window.addEventListener('mousemove', (e) => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// Simple vector field function
+function getAngle(x, y) {
+  const scale = 0.005; // how “tight” the swirls are
+  return Math.sin(y * scale) * Math.PI + Math.cos(x * scale) * Math.PI;
+}
+
+function animate() {
+  // Draw a semi-transparent background for fading trails
+  ctx.fillStyle = 'rgba(20,20,20,0.1)'; 
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  particles.forEach(p => {
+    // Vector field velocity
+    const angle = getAngle(p.x, p.y);
+    const speed = 1.2;
+    p.vx = Math.cos(angle) * speed;
+    p.vy = Math.sin(angle) * speed;
+
+    // Optional: attract particles to mouse
+    if (mouse.x && mouse.y) {
+      const dx = mouse.x - p.x;
+      const dy = mouse.y - p.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 200) { // influence radius
+        p.vx += dx * 0.001;
+        p.vy += dy * 0.001;
+      }
+    }
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    // Wrap around edges
+    if (p.x < 0) p.x = canvas.width;
+    if (p.x > canvas.width) p.x = 0;
+    if (p.y < 0) p.y = canvas.height;
+    if (p.y > canvas.height) p.y = 0;
+
+    // Draw particle
+    ctx.fillStyle = `hsl(${angle*180/Math.PI}, 70%, 60%)`;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+
+animate();
