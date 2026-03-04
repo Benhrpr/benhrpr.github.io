@@ -4,7 +4,7 @@ title: Prototype timetable website
 description: A prototype timetable website for students to view their classes and information about themselves.
 img: assets/img/timetable.png
 importance: 1
-category: school
+category: School
 ---
 
 ##### This website was created for an assessment for the class 'Digital User Interface/Experience'.
