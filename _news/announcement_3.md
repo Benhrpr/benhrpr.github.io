@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started year 12 (final yaer)
+Started year 12 (final year)
