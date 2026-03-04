@@ -11,67 +11,64 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-// Fewer particles
-const numParticles = 150;
-const particles = [];
-for (let i = 0; i < numParticles; i++) {
-  particles.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    vx: 0,
-    vy: 0,
-  });
+// Shooting star setup
+const stars = [];
+const maxStars = 5; // max simultaneous shooting stars
+
+// Shooting star class
+class ShootingStar {
+  constructor() {
+    this.reset();
+  }
+  
+  reset() {
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height * 0.5; // top half of screen
+    this.len = Math.random() * 80 + 50;
+    this.speed = Math.random() * 8 + 4;
+    this.angle = Math.random() * 0.2 - 0.1; // slight angle
+    this.opacity = 1;
+    this.fade = Math.random() * 0.01 + 0.005;
+  }
+  
+  update() {
+    this.x += this.speed;
+    this.y += this.speed * this.angle;
+    this.opacity -= this.fade;
+    if (this.opacity <= 0 || this.x > canvas.width || this.y > canvas.height) {
+      this.reset();
+    }
+  }
+  
+  draw() {
+    ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(this.x, this.y);
+    ctx.lineTo(this.x - this.len, this.y - this.len * this.angle);
+    ctx.stroke();
+  }
 }
 
-// Optional mouse interaction (can be removed if you want just passive flow)
-const mouse = { x: null, y: null };
-window.addEventListener('mousemove', (e) => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-});
-
-// Vector field function
-function getAngle(x, y) {
-  const scale = 0.005; // controls swirl tightness
-  return Math.sin(y * scale) * Math.PI + Math.cos(x * scale) * Math.PI;
+// Add initial shooting stars
+for (let i = 0; i < maxStars; i++) {
+  if (Math.random() < 0.5) stars.push(new ShootingStar());
 }
 
 function animate() {
-  // Solid black background (no fading)
+  // Black background
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  particles.forEach(p => {
-    const angle = getAngle(p.x, p.y);
-    const speed = 1.2;
-    p.vx = Math.cos(angle) * speed;
-    p.vy = Math.sin(angle) * speed;
+  // Occasionally spawn new stars
+  if (stars.length < maxStars && Math.random() < 0.02) {
+    stars.push(new ShootingStar());
+  }
 
-    // Optional: simple mouse attraction
-    if (mouse.x && mouse.y) {
-      const dx = mouse.x - p.x;
-      const dy = mouse.y - p.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 200) {
-        p.vx += dx * 0.001;
-        p.vy += dy * 0.001;
-      }
-    }
-
-    p.x += p.vx;
-    p.y += p.vy;
-
-    // Wrap around edges
-    if (p.x < 0) p.x = canvas.width;
-    if (p.x > canvas.width) p.x = 0;
-    if (p.y < 0) p.y = canvas.height;
-    if (p.y > canvas.height) p.y = 0;
-
-    // Blue particle
-    ctx.fillStyle = '#00bfff'; // bright blue
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-    ctx.fill();
+  // Update and draw stars
+  stars.forEach(star => {
+    star.update();
+    star.draw();
   });
 
   requestAnimationFrame(animate);
