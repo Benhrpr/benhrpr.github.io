@@ -13,7 +13,7 @@ window.addEventListener('resize', () => {
 
 // Shooting star setup
 const stars = [];
-const maxStars = 3;
+const maxStars = 2; // subtle
 
 class ShootingStar {
   constructor() {
@@ -21,16 +21,16 @@ class ShootingStar {
   }
 
   reset() {
-    // Spawn anywhere along the top
+    // Spawn anywhere along the top width
     this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height * 0.2; // top 20%
-    this.len = Math.random() * 100 + 50;
-    this.speed = Math.random() * 6 + 4;
-    // Diagonal downward
+    this.y = Math.random() * canvas.height * 0.1; // top 10%
+    this.len = Math.random() * 120 + 80; // longer tails
+    this.speed = Math.random() * 5 + 3; // slower, more natural
+    this.angle = Math.random() * 0.3 + 0.2; // diagonal downward (more right than left)
     this.vx = this.speed;
-    this.vy = this.speed * (Math.random() * 0.5 + 0.3);
+    this.vy = this.speed * this.angle;
     this.opacity = 1;
-    this.fade = Math.random() * 0.02 + 0.01;
+    this.fade = Math.random() * 0.005 + 0.002; // slow fade
   }
 
   update() {
@@ -47,7 +47,7 @@ class ShootingStar {
   }
 
   draw() {
-    // Calculate end of tail along actual velocity
+    // Tail along velocity vector
     const tailX = this.x - this.vx * this.len / this.speed;
     const tailY = this.y - this.vy * this.len / this.speed;
 
@@ -68,12 +68,12 @@ class ShootingStar {
 for (let i = 0; i < maxStars; i++) stars.push(new ShootingStar());
 
 function animate() {
-  // Black background with slight fade for trails
-  ctx.fillStyle = 'rgba(0,0,0,0.15)';
+  // Black background, full opacity for clean night sky
+  ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Occasionally add new stars if under max
-  if (stars.length < maxStars && Math.random() < 0.01) {
+  // Occasionally spawn new stars if under max
+  if (stars.length < maxStars && Math.random() < 0.005) {
     stars.push(new ShootingStar());
   }
 
