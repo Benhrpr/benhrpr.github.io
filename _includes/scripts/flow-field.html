@@ -13,9 +13,8 @@ window.addEventListener('resize', () => {
 
 // Shooting star setup
 const stars = [];
-const maxStars = 5; // max simultaneous shooting stars
+const maxStars = 5; // subtle, not overkill
 
-// Shooting star class
 class ShootingStar {
   constructor() {
     this.reset();
@@ -23,12 +22,12 @@ class ShootingStar {
   
   reset() {
     this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height * 0.5; // top half of screen
+    this.y = Math.random() * canvas.height * 0.5; // top half
     this.len = Math.random() * 80 + 50;
     this.speed = Math.random() * 8 + 4;
-    this.angle = Math.random() * 0.2 - 0.1; // slight angle
+    this.angle = Math.random() * 0.2 - 0.1;
     this.opacity = 1;
-    this.fade = Math.random() * 0.01 + 0.005;
+    this.fade = Math.random() * 0.02 + 0.01;
   }
   
   update() {
@@ -41,7 +40,15 @@ class ShootingStar {
   }
   
   draw() {
-    ctx.strokeStyle = `rgba(255,255,255,${this.opacity})`;
+    // White tail with fading effect
+    const grad = ctx.createLinearGradient(
+      this.x, this.y, 
+      this.x - this.len, this.y - this.len * this.angle
+    );
+    grad.addColorStop(0, `rgba(255,255,255,${this.opacity})`);
+    grad.addColorStop(1, `rgba(255,255,255,0)`);
+    
+    ctx.strokeStyle = grad;
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
@@ -50,22 +57,19 @@ class ShootingStar {
   }
 }
 
-// Add initial shooting stars
-for (let i = 0; i < maxStars; i++) {
-  if (Math.random() < 0.5) stars.push(new ShootingStar());
-}
+// Start with a few stars
+for (let i = 0; i < maxStars; i++) stars.push(new ShootingStar());
 
 function animate() {
-  // Black background
-  ctx.fillStyle = '#000000';
+  // Draw a semi-transparent black rectangle to create fading trails
+  ctx.fillStyle = 'rgba(0,0,0,0.15)'; 
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Occasionally spawn new stars
-  if (stars.length < maxStars && Math.random() < 0.02) {
+  // Occasionally spawn new stars if under max
+  if (stars.length < maxStars && Math.random() < 0.01) {
     stars.push(new ShootingStar());
   }
 
-  // Update and draw stars
   stars.forEach(star => {
     star.update();
     star.draw();
