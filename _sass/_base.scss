@@ -236,7 +236,6 @@ blockquote {
     a {
       i::before {
         color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
@@ -256,7 +255,6 @@ blockquote {
     background-color: var(--global-text-color);
     border-radius: 1px;
     margin-bottom: 4px;
-    transition: all 0.2s;
   }
 
   .top-bar {
@@ -311,7 +309,6 @@ blockquote {
     a {
       i::before {
         color: var(--global-text-color);
-        transition-property: all 0.2s ease-in-out;
       }
 
       &:hover {
