@@ -21,12 +21,21 @@ class ShootingStar {
   }
 
   reset() {
-    // Spawn anywhere along the top width
-    this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height * 0.1; // top 10%
-    this.len = Math.random() * 120 + 80; // longer tails
-    this.speed = Math.random() * 5 + 3; // slower, more natural
-    this.angle = Math.random() * 0.3 + 0.2; // diagonal downward (more right than left)
+    // Randomly spawn from left edge or top edge
+    if (Math.random() < 0.5) {
+      // Left edge
+      this.x = 0;
+      this.y = Math.random() * canvas.height;
+    } else {
+      // Top edge
+      this.x = Math.random() * canvas.width;
+      this.y = 0;
+    }
+
+    this.len = Math.random() * 120 + 80; // tail length
+    this.speed = Math.random() * 5 + 3;  // speed
+    // Diagonal downward toward bottom-right
+    this.angle = Math.random() * 0.3 + 0.2; // slight variation
     this.vx = this.speed;
     this.vy = this.speed * this.angle;
     this.opacity = 1;
@@ -64,15 +73,15 @@ class ShootingStar {
   }
 }
 
-// Initialize
+// Initialize stars
 for (let i = 0; i < maxStars; i++) stars.push(new ShootingStar());
 
 function animate() {
-  // Black background, full opacity for clean night sky
+  // Black background
   ctx.fillStyle = '#000';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Occasionally spawn new stars if under max
+  // Occasionally add new stars if under max
   if (stars.length < maxStars && Math.random() < 0.005) {
     stars.push(new ShootingStar());
   }
