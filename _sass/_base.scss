@@ -168,9 +168,9 @@ blockquote {
 
 .navbar {
   box-shadow: none;
-  border-bottom: 1px solid var(--global-divider-color);
-  background-color: var(--global-bg-color);
-  opacity: 0;
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  opacity: 0.95;
 }
 
 .navbar .dropdown-menu {
