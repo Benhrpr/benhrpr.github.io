@@ -13,7 +13,7 @@ window.addEventListener('resize', () => {
 
 // Shooting star setup
 const stars = [];
-const maxStars = 5; // subtle, not overkill
+const maxStars = 3; // subtle
 
 class ShootingStar {
   constructor() {
@@ -21,29 +21,35 @@ class ShootingStar {
   }
   
   reset() {
+    // Spawn anywhere along top and slightly above for diagonal entry
     this.x = Math.random() * canvas.width;
-    this.y = Math.random() * canvas.height * 0.5; // top half
-    this.len = Math.random() * 80 + 50;
-    this.speed = Math.random() * 8 + 4;
-    this.angle = Math.random() * 0.2 - 0.1;
+    this.y = Math.random() * -canvas.height * 0.2; 
+    this.len = Math.random() * 100 + 50;
+    this.speed = Math.random() * 6 + 4;
+    // Diagonal downward to the right
+    this.vx = this.speed;
+    this.vy = this.speed * (Math.random() * 0.5 + 0.3); // small variation
     this.opacity = 1;
     this.fade = Math.random() * 0.02 + 0.01;
   }
   
   update() {
-    this.x += this.speed;
-    this.y += this.speed * this.angle;
+    this.x += this.vx;
+    this.y += this.vy;
     this.opacity -= this.fade;
-    if (this.opacity <= 0 || this.x > canvas.width || this.y > canvas.height) {
+    if (
+      this.opacity <= 0 || 
+      this.x > canvas.width + this.len || 
+      this.y > canvas.height + this.len
+    ) {
       this.reset();
     }
   }
   
   draw() {
-    // White tail with fading effect
     const grad = ctx.createLinearGradient(
-      this.x, this.y, 
-      this.x - this.len, this.y - this.len * this.angle
+      this.x, this.y,
+      this.x - this.len, this.y - this.len * 0.4
     );
     grad.addColorStop(0, `rgba(255,255,255,${this.opacity})`);
     grad.addColorStop(1, `rgba(255,255,255,0)`);
@@ -52,7 +58,7 @@ class ShootingStar {
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
-    ctx.lineTo(this.x - this.len, this.y - this.len * this.angle);
+    ctx.lineTo(this.x - this.len, this.y - this.len * 0.4);
     ctx.stroke();
   }
 }
@@ -61,8 +67,8 @@ class ShootingStar {
 for (let i = 0; i < maxStars; i++) stars.push(new ShootingStar());
 
 function animate() {
-  // Draw a semi-transparent black rectangle to create fading trails
-  ctx.fillStyle = 'rgba(0,0,0,0.15)'; 
+  // Black background with fading trails
+  ctx.fillStyle = 'rgba(0,0,0,0.15)';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // Occasionally spawn new stars if under max
