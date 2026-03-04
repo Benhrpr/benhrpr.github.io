@@ -4,7 +4,7 @@ title: Built a PC
 description: My personal PC build
 img: assets/img/pc.jpg
 importance: 3
-category: fun
+category: Fun
 ---
 
 During the first two week holiday of 2023 I built a personal computer for myself. This computer was created for school work, gaming and coding.
