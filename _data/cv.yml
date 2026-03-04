@@ -7,6 +7,8 @@
       value: 25th February 2009
     - name: Main Languages
       value: English
+    - name: Email
+      value: ben@benhrpr.com
 
 - title: Education
   type: time_table
