@@ -13,3 +13,13 @@ $max-content-width: {{ site.max_width }};
   "base",
   "distill"
 ;
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // so clicks still work
+  z-index: -1;          // behind content
+}
