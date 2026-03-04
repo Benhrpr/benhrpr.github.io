@@ -5,6 +5,6 @@ description:
 img:
 redirect: /games/
 importance: 4
-category: fun
+category: Fun
 ---
 
