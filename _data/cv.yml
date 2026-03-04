@@ -22,8 +22,13 @@
       year: 2021
       description:
         - From 2021-2026
-        - VCE subjects were English, Physics, Mathematical Methods, Economics and Business Management
-        
+        VCE subjects included
+        - English
+        - Physics
+        - Mathematical Methods
+        - Economics
+        - Business Management
+      
         
 
 - title: Experience
@@ -40,9 +45,9 @@
     - title: VHAP
       year: 2021
       description: 
-      - Was apart of multiple instances of the Victorian High Achiever Program (VHAP) in maths and english. 
-        Every week there was lectures with other high achievers.
-      - 2021-2022
+       - 2021-2022
+        - Was apart of multiple instances of the Victorian High Achiever Program (VHAP) in maths and english. 
+          Every week there was lectures with other high achievers.
   
 - title: Open Source Projects
   type: time_table
