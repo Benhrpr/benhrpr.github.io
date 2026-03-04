@@ -11,7 +11,8 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 
-const numParticles = 1000;
+// Fewer particles
+const numParticles = 150;
 const particles = [];
 for (let i = 0; i < numParticles; i++) {
   particles.push({
@@ -22,19 +23,22 @@ for (let i = 0; i < numParticles; i++) {
   });
 }
 
+// Optional mouse interaction (can be removed if you want just passive flow)
 const mouse = { x: null, y: null };
 window.addEventListener('mousemove', (e) => {
   mouse.x = e.clientX;
   mouse.y = e.clientY;
 });
 
+// Vector field function
 function getAngle(x, y) {
-  const scale = 0.005;
+  const scale = 0.005; // controls swirl tightness
   return Math.sin(y * scale) * Math.PI + Math.cos(x * scale) * Math.PI;
 }
 
 function animate() {
-  ctx.fillStyle = 'rgba(20,20,20,0.1)';
+  // Solid black background (no fading)
+  ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   particles.forEach(p => {
@@ -43,6 +47,7 @@ function animate() {
     p.vx = Math.cos(angle) * speed;
     p.vy = Math.sin(angle) * speed;
 
+    // Optional: simple mouse attraction
     if (mouse.x && mouse.y) {
       const dx = mouse.x - p.x;
       const dy = mouse.y - p.y;
@@ -56,14 +61,16 @@ function animate() {
     p.x += p.vx;
     p.y += p.vy;
 
+    // Wrap around edges
     if (p.x < 0) p.x = canvas.width;
     if (p.x > canvas.width) p.x = 0;
     if (p.y < 0) p.y = canvas.height;
     if (p.y > canvas.height) p.y = 0;
 
-    ctx.fillStyle = `hsl(${angle*180/Math.PI}, 70%, 60%)`;
+    // Blue particle
+    ctx.fillStyle = '#00bfff'; // bright blue
     ctx.beginPath();
-    ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
     ctx.fill();
   });
 
