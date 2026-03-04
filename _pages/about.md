@@ -6,7 +6,7 @@ subtitle: Melbourne Australia
 
 profile:
   align: right
-  image: IMG_3337.jpg
+  image: IMG_3337.JPG
   image_circular: false # crops the image to make it circular
   address: >
 
