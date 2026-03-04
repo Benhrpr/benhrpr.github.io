@@ -3,7 +3,7 @@
  ******************************************************************************/
 
 :root {
-  --global-bg-color: #{$white-color};
+  --global-bg-color: #000000;
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$cyan-color};
   --global-text-color-light: #{$grey-color};
@@ -48,7 +48,7 @@
 }
 
 html[data-theme='dark'] {
-  --global-bg-color: #000000};
+  --global-bg-color: #000000;
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color-light};
@@ -91,5 +91,6 @@ html[data-theme='dark'] {
     display: block;
   }
 }
+
 
 
