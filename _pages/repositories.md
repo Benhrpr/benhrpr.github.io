@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /github/
-title: github
+title: GitHub
 description: 
 nav: true
 nav_order: 3
