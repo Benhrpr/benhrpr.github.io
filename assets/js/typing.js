@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){function t(){o<n.length&&(e.textContent+=n.charAt(o),o++,setTimeout(t,c))}const e=document.getElementById("typed-name");if(!e)return;const n=e.textContent.trim();e.textContent="";let o=0;const c=80;t()});
