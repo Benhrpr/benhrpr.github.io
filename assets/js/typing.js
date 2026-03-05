@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const el = document.getElementById("typed-name");
   if (!el) return;
 
-  const first = "{{ site.first_name }}";
-  const middle = "{{ site.middle_name }}";
-  const last = "{{ site.last_name }}";
+  // For testing, use a hardcoded name first
+  const first = "Ben";
+  const middle = "";
+  const last = "Harper";
 
   const fullName = (first + " " + middle + " " + last).trim();
 
@@ -16,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentText = fullName.substring(0, i + 1);
 
       if (currentText.length <= first.length) {
-        el.innerHTML =
-          "<span class='font-weight-bold'>" + currentText + "</span>";
+        el.innerHTML = "<span class='font-weight-bold'>" + currentText + "</span>";
       } else {
         el.innerHTML =
           "<span class='font-weight-bold'>" + first + "</span>" +
