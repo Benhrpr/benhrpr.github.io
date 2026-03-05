@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const fullName = (first + " " + middle + " " + last).trim();
 
   let i = 0;
-  const speed = 60;
+  const speed = 30;
 
   function type() {
     if (i < fullName.length) {
